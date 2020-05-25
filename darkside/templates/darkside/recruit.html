@@ -1,0 +1,10 @@
+{% extends 'darkside/index.html'%}
+
+{% block sithblock %}
+    <div><p>Новый рекрут:</p></div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Отправить">
+    </form>
+{% endblock sithblock%}

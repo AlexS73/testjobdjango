@@ -1,0 +1,29 @@
+{% extends 'darkside/index.html'%}
+
+{%block viewrecruits%}
+<p>Рекруты прошедшие тест:</p>
+<!-- 		<div class="recruit_block">
+			<p>Список рекрутов прошедших тест:</p>
+
+			{%for i in findrecruit%}
+				<p><a href="{% url 'detailrecruit' idrecruit=i.id %}">{{i}}</a></p>
+			{% endfor %}
+		</div>
+    </div> -->
+
+<div class="recruit_block">
+	{%for i in findrecruit%}
+	<div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{i}}</h5>
+        <p class="card-text">Планета: {{i.planet}}; Возраст: {{i.age}}</p>
+        <a href="{% url 'detailrecruit' idrecruit=i.id %}" class="btn btn-primary">Просмотр ответов</a>
+      </div>
+    </div>
+  </div>	
+	{% endfor %}
+
+
+   </div>
+{%endblock viewrecruits%}

@@ -1,0 +1,17 @@
+{% extends 'darkside/index.html'%}
+
+{%block detailrecruit%}
+	<div class="detailrecruit">
+	
+		<h2>{{findrecruit.name}}</h2>
+		{%for i in findqustions%}
+		<p>{{i.question}} / {{i.choise}}</p>
+		{%endfor%}
+		<form method = "POST">
+			{% csrf_token %} 
+		<input type="submit" value="Сделать рукой тени">
+		</form>
+
+		
+	</div>
+{%endblock detailrecruit%}

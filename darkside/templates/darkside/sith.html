@@ -1,0 +1,14 @@
+{% extends 'darkside/index.html'%}
+
+{% block sithblock %}
+    <div><p>Авторизация:</p></div>
+    <form method="post">
+        {% csrf_token %}
+	<select id="selectsith" name="selectsith" class="form-control">
+	  	{%for i in setsith%}
+	  	<option id="{{i.id}}" value="{{i.id}}">{{i.name}}</option>
+		{%endfor%}
+	</select>
+        <input type="submit" value="Выбрать" class="btn btn-outline-dark mt-5">
+    </form>
+{% endblock sithblock%}

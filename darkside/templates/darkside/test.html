@@ -1,0 +1,9 @@
+{% extends 'darkside/index.html'%}
+
+{% block test2 %}
+    <form method="post">
+    {% csrf_token %}
+    {{ formshtml.as_p }}
+    <input type="submit" value="Отправить">
+    </form>
+{% endblock test2%}
